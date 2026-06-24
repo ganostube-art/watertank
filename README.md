@@ -1,6 +1,6 @@
-# WATERTANK PREMIUM 분양 홈페이지
+# WATERTANK CARE MALL 홈페이지
 
-정적 HTML 기반의 1차 분양 랜딩페이지입니다. 서버 빌드 없이 `index.html`과 `assets` 폴더를 그대로 업로드하면 됩니다.
+정적 HTML 기반의 물탱크 관리 상담 랜딩페이지입니다. 서버 빌드 없이 `index.html`과 `assets` 폴더를 그대로 업로드하면 됩니다.
 
 ## 파일 구성
 
@@ -11,10 +11,9 @@
 
 ## 나중에 교체할 주요 항목
 
-- 분양명: `WATERTANK PREMIUM`
+- 사이트명: `WATERTANK CARE MALL`
 - 대표전화: `1877-8500`
-- 주소/위치: `수도권 주요 생활·업무 권역`
-- 상품 타입: `A TYPE`, `B TYPE`
+- 상담 항목: 물탱크 청소, 누수 보수, 방수·코팅, 교체·신설
 - 대표 이미지: `assets/hero-development.png`
 
 ## 운영 메모

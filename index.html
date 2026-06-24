@@ -9,7 +9,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="WATERTANK REPAIR | 물탱크 수리 무료상담">
   <meta property="og:description" content="물탱크 누수 수리, 볼탑 교체, 부분·올 라이닝, 지지대 보강까지 상담받는 공식 수리 상담 페이지입니다.">
-  <meta property="og:image" content="assets/hero-development.png">
+  <meta property="og:image" content="assets/hero-1.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,9 +139,8 @@
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(90deg, rgba(5, 36, 61, .94) 0%, rgba(5, 36, 61, .78) 42%, rgba(5, 36, 61, .26) 72%),
-        url("assets/hero-development.png") center right / cover no-repeat;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(5, 36, 61, .96) 0%, rgba(5, 36, 61, .82) 42%, rgba(5, 36, 61, .28) 74%);
     }
     .hero::after {
       content: "";
@@ -149,8 +148,35 @@
       left: 0;
       right: 0;
       bottom: 0;
+      z-index: 1;
       height: 110px;
       background: linear-gradient(180deg, transparent, rgba(5, 36, 61, .34));
+    }
+    .hero-slides {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background-position: center right;
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation: heroFade 35s infinite;
+    }
+    .hero-slide:nth-child(1) { background-image: url("assets/hero-1.png"); opacity: 1; animation-delay: 0s; }
+    .hero-slide:nth-child(2) { background-image: url("assets/hero-2.png"); animation-delay: 7s; }
+    .hero-slide:nth-child(3) { background-image: url("assets/hero-3.png"); animation-delay: 14s; }
+    .hero-slide:nth-child(4) { background-image: url("assets/hero-4.png"); animation-delay: 21s; }
+    .hero-slide:nth-child(5) { background-image: url("assets/hero-5.png"); animation-delay: 28s; }
+    @keyframes heroFade {
+      0% { opacity: 0; transform: scale(1.02); }
+      5% { opacity: 1; }
+      20% { opacity: 1; }
+      27% { opacity: 0; transform: scale(1.06); }
+      100% { opacity: 0; transform: scale(1.06); }
     }
     .hero .container {
       position: relative;
@@ -717,11 +743,8 @@
     @media (max-width: 980px) {
       .nav { display: none; }
       .hero, .hero .container { min-height: 620px; }
-      .hero::before {
-        background:
-          linear-gradient(180deg, rgba(5, 36, 61, .96) 0%, rgba(5, 36, 61, .78) 58%, rgba(5, 36, 61, .58) 100%),
-          url("assets/hero-development.png") center / cover no-repeat;
-      }
+      .hero::before { background: linear-gradient(180deg, rgba(5, 36, 61, .96) 0%, rgba(5, 36, 61, .82) 58%, rgba(5, 36, 61, .62) 100%); }
+      .hero-slide { background-position: center; }
       .hero-panel,
       .overview-grid,
       .contact-wrap,
@@ -808,6 +831,13 @@
 
   <main id="home">
     <section class="hero" aria-label="물탱크 수리 무료상담 메인">
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+      </div>
       <div class="container">
         <div>
           <span class="eyebrow">WATERTANK REPAIR</span>

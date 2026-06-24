@@ -5,6 +5,7 @@
 ## 파일 구성
 
 - `index.html`: 홈페이지 본문, 스타일, 상담 폼
+- `assets/hero-1.png` - `assets/hero-5.png`: 히어로 순환 배경 이미지
 - `assets/hero-development.png`: 메인 대표 이미지
 - `assets/tank-site.jpg`: 본사 자료 기반 물탱크 현장 이미지
 - `assets/consult-phone.jpg`: 상담 접수 이미지

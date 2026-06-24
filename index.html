@@ -486,6 +486,67 @@
       font-size: 12px;
       font-weight: 800;
     }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .photo-card {
+      position: relative;
+      min-height: 280px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--navy);
+      box-shadow: 0 16px 42px rgba(7, 37, 64, .12);
+    }
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      opacity: .82;
+    }
+    .photo-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 34%, rgba(5, 36, 61, .82));
+    }
+    .photo-caption {
+      position: absolute;
+      z-index: 2;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
+      color: #fff;
+    }
+    .photo-caption span {
+      color: #82edf9;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+    .photo-caption h3 {
+      margin: 8px 0 0;
+      font-size: 23px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+    .photo-caption p {
+      margin: 9px 0 0;
+      color: #d8e9f4;
+      line-height: 1.6;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .photo-stack {
+      display: grid;
+      gap: 22px;
+    }
+    .photo-stack .photo-card {
+      min-height: 230px;
+    }
 
     .timeline {
       display: grid;
@@ -663,7 +724,8 @@
       }
       .hero-panel,
       .overview-grid,
-      .contact-wrap {
+      .contact-wrap,
+      .photo-grid {
         grid-template-columns: 1fr;
       }
       .hero-panel {
@@ -694,7 +756,7 @@
       .hero h1 { font-size: 38px; }
       .hero p { font-size: 16px; }
       .btn { width: 100%; }
-      .hero-panel, .cards, .cards.six, .timeline, .trust-grid, .form-grid { grid-template-columns: 1fr; }
+      .hero-panel, .cards, .cards.six, .timeline, .trust-grid, .form-grid, .photo-grid { grid-template-columns: 1fr; }
       .metric { border-right: 0; border-bottom: 1px solid var(--line); }
       .metric:last-child { border-bottom: 0; }
       .section { padding: 74px 0; }
@@ -857,6 +919,44 @@
               <div class="chips"><span class="chip">STS</span><span class="chip">콘크리트</span><span class="chip">지지대 보강</span></div>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="photos">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">FIELD & CONSULTING</div>
+          <h2>현장 확인부터 상담·견적까지 이미지로 이해하기 쉽게</h2>
+          <p class="lead">본사 홈페이지 자료를 바탕으로 물탱크 현장, 상담 접수, 견적 확인 흐름을 시각적으로 보강했습니다.</p>
+        </div>
+        <div class="photo-grid">
+          <article class="photo-card">
+            <img src="assets/tank-site.jpg" alt="건물 옥상 물탱크 현장 이미지">
+            <div class="photo-caption">
+              <span>FIELD CHECK</span>
+              <h3>물탱크 현장 상태를 먼저 확인합니다</h3>
+              <p>탱크 종류, 설치 위치, 노후 상태, 누수 범위를 기준으로 수리 가능 여부와 작업 방향을 판단합니다.</p>
+            </div>
+          </article>
+          <div class="photo-stack">
+            <article class="photo-card">
+              <img src="assets/consult-phone.jpg" alt="전화 상담 접수 이미지">
+              <div class="photo-caption">
+                <span>CONSULTING</span>
+                <h3>전화·메일 무료상담</h3>
+                <p>증상과 사진 유무를 남기면 담당자가 확인 후 연락드립니다.</p>
+              </div>
+            </article>
+            <article class="photo-card">
+              <img src="assets/estimate-check.jpg" alt="견적 확인 이미지">
+              <div class="photo-caption">
+                <span>ESTIMATE</span>
+                <h3>수리 범위와 일정 안내</h3>
+                <p>현장 조건에 맞춰 작업 범위, 일정, 사후관리 방향을 안내합니다.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>

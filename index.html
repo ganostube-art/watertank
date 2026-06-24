@@ -399,6 +399,44 @@
       line-height: 1.72;
       font-weight: 500;
     }
+    .cards.six {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .trust-band {
+      color: #fff;
+      background: var(--navy);
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 38px;
+    }
+    .trust-item {
+      min-height: 180px;
+      padding: 26px 24px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .055);
+    }
+    .trust-item span {
+      color: #64def0;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .trust-item h3 {
+      margin: 13px 0 0;
+      color: #fff;
+      font-size: 19px;
+      font-weight: 900;
+    }
+    .trust-item p {
+      margin: 10px 0 0;
+      color: #b7d0e2;
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 500;
+    }
 
     .product-grid {
       display: grid;
@@ -637,7 +675,7 @@
         z-index: 5;
       }
       .section.first { padding-top: 76px; }
-      .cards, .timeline { grid-template-columns: repeat(2, 1fr); }
+      .cards, .cards.six, .timeline, .trust-grid { grid-template-columns: repeat(2, 1fr); }
       .product-grid { grid-template-columns: 1fr; }
     }
 
@@ -656,7 +694,7 @@
       .hero h1 { font-size: 38px; }
       .hero p { font-size: 16px; }
       .btn { width: 100%; }
-      .hero-panel, .cards, .timeline, .form-grid { grid-template-columns: 1fr; }
+      .hero-panel, .cards, .cards.six, .timeline, .trust-grid, .form-grid { grid-template-columns: 1fr; }
       .metric { border-right: 0; border-bottom: 1px solid var(--line); }
       .metric:last-child { border-bottom: 0; }
       .section { padding: 74px 0; }
@@ -760,7 +798,7 @@
           <h2>수리 빈도가 높은 증상부터 정확히 확인합니다</h2>
           <p class="lead">고장 원인이 다르면 수리 방법도 달라집니다. 가장 자주 발생하는 항목을 기준으로 현장 상태를 확인합니다.</p>
         </div>
-        <div class="cards">
+        <div class="cards six">
           <article class="card">
             <div class="icon">01</div>
             <h3>볼탑 고장</h3>
@@ -775,6 +813,21 @@
             <div class="icon">03</div>
             <h3>지지대·인장대 문제</h3>
             <p>지지대 파손으로 인장대 기능이 떨어진 경우 지지대 보강, 인장대 교체, 부분 라이닝을 검토합니다.</p>
+          </article>
+          <article class="card">
+            <div class="icon">04</div>
+            <h3>부분 라이닝</h3>
+            <p>손상 범위가 제한적인 경우 필요한 구간만 보강해 비용과 작업 시간을 줄이는 방향을 검토합니다.</p>
+          </article>
+          <article class="card">
+            <div class="icon">05</div>
+            <h3>올 라이닝</h3>
+            <p>노후와 누수가 넓게 진행된 경우 내부 전체 상태를 확인하고 올 라이닝 작업 가능 여부를 안내합니다.</p>
+          </article>
+          <article class="card">
+            <div class="icon">06</div>
+            <h3>교체·보강 판단</h3>
+            <p>수리로 해결 가능한지, 일부 교체나 보강이 필요한지 현장 상태를 기준으로 현실적인 방향을 제안합니다.</p>
           </article>
         </div>
       </div>
@@ -803,6 +856,38 @@
               <p>부식, 접합부 누수, 지지대 파손, 구조 문제를 확인하고 보강과 수리 방향을 제안합니다.</p>
               <div class="chips"><span class="chip">STS</span><span class="chip">콘크리트</span><span class="chip">지지대 보강</span></div>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trust-band" id="trust">
+      <div class="container">
+        <div class="section-head center">
+          <div class="label">WHY WATERTANK</div>
+          <h2>본사 기술력과 사후관리까지 함께 안내합니다</h2>
+          <p class="lead">물탱크수리연구소의 기존 시공 경험과 수급망을 바탕으로, 현장 상태에 맞는 수리 방향을 투명하게 안내합니다.</p>
+        </div>
+        <div class="trust-grid">
+          <article class="trust-item">
+            <span>01</span>
+            <h3>전국 출장 시공</h3>
+            <p>아파트, 공장, 학교, 관공서 등 다양한 현장 조건에 맞춰 방문 상담과 작업 일정을 조율합니다.</p>
+          </article>
+          <article class="trust-item">
+            <span>02</span>
+            <h3>제조사 다이렉트 수급</h3>
+            <p>필요 자재와 부품을 합리적으로 검토해 현장에 맞는 수리 범위와 비용 방향을 안내합니다.</p>
+          </article>
+          <article class="trust-item">
+            <span>03</span>
+            <h3>꼼꼼한 시공</h3>
+            <p>단순히 보이는 누수만 막는 것이 아니라, 재발 가능성과 주변 구조까지 함께 확인합니다.</p>
+          </article>
+          <article class="trust-item">
+            <span>04</span>
+            <h3>확실한 사후관리</h3>
+            <p>작업 후 상태 확인과 유지관리 방향을 안내해 수리 이후까지 안심할 수 있도록 돕습니다.</p>
           </article>
         </div>
       </div>
@@ -841,9 +926,13 @@
             <div class="form-grid">
               <label>이름<input type="text" name="name" placeholder="홍길동" required></label>
               <label>연락처<input type="tel" name="phone" placeholder="010-0000-0000" required></label>
+              <label>지역<input type="text" name="region" placeholder="예: 경기 광명, 인천 남동구"></label>
+              <label>물탱크 종류<select name="tank"><option>모름</option><option>FRP</option><option>SMC</option><option>STS</option><option>콘크리트</option></select></label>
               <label>수리 항목<select name="type"><option>볼탑 고장·교체</option><option>누수 수리</option><option>부분 라이닝</option><option>올 라이닝</option><option>지지대 보강·인장대 교체</option><option>기타 수리</option></select></label>
+              <label>누수 위치<select name="leak"><option>모름</option><option>상부</option><option>측면</option><option>하부</option><option>연결부</option><option>내부 전체</option></select></label>
               <label>상담 희망 시간<select name="time"><option>상관없음</option><option>오전</option><option>오후</option><option>저녁</option></select></label>
-              <label class="full">문의 내용<textarea name="message" placeholder="FRP/SMC/STS/콘크리트 중 종류, 누수 위치, 고장 증상, 희망 일정을 적어주세요."></textarea></label>
+              <label>희망 일정<input type="text" name="schedule" placeholder="예: 이번 주 평일 오후"></label>
+              <label class="full">문의 내용<textarea name="message" placeholder="고장 증상, 물탱크 용량, 사진 유무, 현장 특이사항 등을 적어주세요."></textarea></label>
             </div>
             <label class="agree"><input type="checkbox" required> 개인정보 수집 및 상담 목적의 연락에 동의합니다.</label>
             <button class="btn submit" type="submit">무료 상담 신청하기</button>

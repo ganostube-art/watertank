@@ -482,11 +482,15 @@
     .plan {
       aspect-ratio: 1;
       border-radius: 8px;
-      background:
-        linear-gradient(90deg, transparent 49%, rgba(14, 124, 196, .35) 50%, transparent 51%),
-        linear-gradient(0deg, transparent 49%, rgba(14, 124, 196, .35) 50%, transparent 51%),
-        repeating-linear-gradient(45deg, #e6f2f9, #e6f2f9 10px, #f7fbfe 10px, #f7fbfe 20px);
+      overflow: hidden;
+      background: #e6f2f9;
       border: 1px solid #cae0ed;
+    }
+    .plan img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
     }
     .product h3 {
       margin: 0;
@@ -972,7 +976,7 @@
         </div>
         <div class="product-grid">
           <article class="product">
-            <div class="plan" aria-hidden="true"></div>
+            <div class="plan"><img src="assets/tank-frp-smc.png" alt="FRP 및 SMC 물탱크 패널 이미지"></div>
             <div>
               <h3>FRP · SMC 물탱크</h3>
               <p>노후화, 균열, 연결부 누수, 라이닝 손상 등 상태를 확인하고 리뉴얼 범위를 안내합니다.</p>
@@ -980,7 +984,7 @@
             </div>
           </article>
           <article class="product">
-            <div class="plan" aria-hidden="true"></div>
+            <div class="plan"><img src="assets/tank-sts-concrete.png" alt="STS 및 콘크리트 물탱크 보강 이미지"></div>
             <div>
               <h3>STS · 콘크리트 물탱크</h3>
               <p>부식, 접합부 누수, 지지대 파손, 구조 문제를 확인하고 보강과 개선 방향을 제안합니다.</p>

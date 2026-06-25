@@ -10,6 +10,8 @@
 - `assets/tank-site.jpg`: 본사 자료 기반 물탱크 현장 이미지
 - `assets/consult-phone.jpg`: 상담 접수 이미지
 - `assets/estimate-check.jpg`: 견적 확인 이미지
+- `assets/tank-frp-smc.png`: FRP/SMC 물탱크 카드 이미지
+- `assets/tank-sts-concrete.png`: STS/콘크리트 물탱크 카드 이미지
 - `assets/favicon.svg`: 브라우저 탭 아이콘
 - `ref/시안A 인쇄.dc.html`: 참고용 원본 시안
 

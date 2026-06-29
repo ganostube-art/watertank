@@ -695,6 +695,36 @@
       background: var(--blue);
       box-shadow: 0 14px 28px rgba(14, 124, 196, .24);
     }
+    .submit:disabled {
+      cursor: progress;
+      opacity: .72;
+    }
+    .form-status {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      color: #17415f;
+      background: #e8f6fd;
+      border: 1px solid #c9e6f5;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+    .form-status.is-visible {
+      display: block;
+    }
+    .form-status.is-error {
+      color: #7a321b;
+      background: #fff1ea;
+      border-color: #ffd4c2;
+    }
+    .privacy-note {
+      margin: 10px 0 0;
+      color: #7a8da0;
+      font-size: 12px;
+      line-height: 1.55;
+    }
 
     .footer {
       padding: 38px 0 90px;
@@ -1056,7 +1086,7 @@
               <div>물탱크 종류와 누수 증상을 남기면 상담이 빨라집니다</div>
             </div>
           </div>
-          <form class="form" onsubmit="event.preventDefault(); alert('상담 신청이 접수되었습니다. 담당자가 확인 후 연락드립니다.');">
+          <form class="form" id="consultForm" data-endpoint="">
             <div class="form-grid">
               <label>이름<input type="text" name="name" placeholder="홍길동" required></label>
               <label>연락처<input type="tel" name="phone" placeholder="010-0000-0000" required></label>
@@ -1069,7 +1099,9 @@
               <label class="full">문의 내용<textarea name="message" placeholder="고장 증상, 물탱크 용량, 사진 유무, 현장 특이사항 등을 적어주세요."></textarea></label>
             </div>
             <label class="agree"><input type="checkbox" required> 개인정보 수집 및 상담 목적의 연락에 동의합니다.</label>
+            <p class="privacy-note">입력하신 이름, 연락처, 지역, 상담 내용은 물탱크 리노베이션 상담 연락과 견적 안내 목적으로만 사용됩니다.</p>
             <button class="btn submit" type="submit">무료 상담 신청하기</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -1090,5 +1122,72 @@
     <a href="#contact">상담신청</a>
     <a href="tel:01049204270">전화연결</a>
   </div>
+  <script>
+    const consultForm = document.querySelector('#consultForm');
+    const formStatus = document.querySelector('#formStatus');
+    const consultationEmail = 'maniayoung@hanmail.net';
+
+    function setFormStatus(message, isError = false) {
+      formStatus.textContent = message;
+      formStatus.classList.toggle('is-error', isError);
+      formStatus.classList.add('is-visible');
+    }
+
+    function buildConsultationMessage(data) {
+      return [
+        '[물탱크 리노베이션 상담 신청]',
+        '',
+        `이름: ${data.get('name') || '-'}`,
+        `연락처: ${data.get('phone') || '-'}`,
+        `지역: ${data.get('region') || '-'}`,
+        `물탱크 종류: ${data.get('tank') || '-'}`,
+        `개선 항목: ${data.get('type') || '-'}`,
+        `누수 위치: ${data.get('leak') || '-'}`,
+        `상담 희망 시간: ${data.get('time') || '-'}`,
+        `희망 일정: ${data.get('schedule') || '-'}`,
+        '',
+        '문의 내용:',
+        data.get('message') || '-'
+      ].join('\n');
+    }
+
+    consultForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!consultForm.reportValidity()) return;
+
+      const submitButton = consultForm.querySelector('button[type="submit"]');
+      const endpoint = consultForm.dataset.endpoint.trim();
+      const data = new FormData(consultForm);
+      data.append('submittedAt', new Date().toISOString());
+      data.append('source', location.href);
+
+      submitButton.disabled = true;
+      setFormStatus('상담 신청 내용을 준비하고 있습니다.');
+
+      if (endpoint) {
+        try {
+          await fetch(endpoint, {
+            method: 'POST',
+            body: data,
+            mode: 'no-cors'
+          });
+          consultForm.reset();
+          setFormStatus('상담 신청이 접수되었습니다. 담당자가 확인 후 연락드립니다.');
+        } catch (error) {
+          setFormStatus('접수 중 문제가 발생했습니다. 전화 또는 메일 상담을 이용해주세요.', true);
+        } finally {
+          submitButton.disabled = false;
+        }
+        return;
+      }
+
+      const subject = encodeURIComponent('[물탱크 리노베이션 상담 신청]');
+      const body = encodeURIComponent(buildConsultationMessage(data));
+      location.href = `mailto:${consultationEmail}?subject=${subject}&body=${body}`;
+      setFormStatus('메일 작성창이 열렸습니다. 내용을 확인한 뒤 전송해 주세요. 빠른 상담은 010-4920-4270으로 전화하시면 됩니다.');
+      submitButton.disabled = false;
+    });
+  </script>
 </body>
 </html>

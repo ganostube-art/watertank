@@ -26,6 +26,14 @@
 - 상담 폼 항목: 지역, 물탱크 종류, 개선 항목, 누수 위치, 희망 일정
 - 대표 이미지: `assets/hero-development.png`
 
-## 운영 메모
+## 상담 폼 운영 메모
 
-현재 상담 폼은 접수 안내 알림만 표시합니다. 실제 운영 시에는 구글폼, 네이버폼, 이메일, 문자, CRM 중 하나로 연결해야 합니다.
+현재 상담 폼은 입력 내용을 정리해 `maniayoung@hanmail.net` 메일 작성창으로 연결합니다.
+
+구글시트 또는 CRM 자동 접수를 사용할 때는 `index.html`의 상담 폼에 있는 `data-endpoint` 값에 접수용 Web App URL을 입력하면 됩니다.
+
+```html
+<form class="form" id="consultForm" data-endpoint="https://script.google.com/macros/s/.../exec">
+```
+
+자동 접수 연동 시 저장 권장 항목은 접수일시, 유입 URL, 이름, 연락처, 지역, 물탱크 종류, 개선 항목, 누수 위치, 상담 희망 시간, 희망 일정, 문의 내용입니다.

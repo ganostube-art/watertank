@@ -5,6 +5,7 @@
 ## 파일 구성
 
 - `index.html`: 홈페이지 본문, 스타일, 상담 폼
+- `apps-script/consultation-form.gs`: 구글시트 상담 접수 및 관리자 메일 알림용 Apps Script
 - `assets/hero-1.png` - `assets/hero-5.png`: 히어로 순환 배경 이미지
 - `assets/hero-development.png`: 메인 대표 이미지
 - `assets/tank-site.jpg`: 본사 자료 기반 물탱크 현장 이미지
@@ -37,3 +38,11 @@
 ```
 
 자동 접수 연동 시 저장 권장 항목은 접수일시, 유입 URL, 이름, 연락처, 지역, 물탱크 종류, 개선 항목, 누수 위치, 상담 희망 시간, 희망 일정, 문의 내용입니다.
+
+관리자 메일 알림까지 사용하려면 `apps-script/consultation-form.gs` 내용을 Google Apps Script 편집기에 붙여넣고 다시 배포해야 합니다.
+
+1. 구글시트에서 `확장 프로그램 > Apps Script`를 엽니다.
+2. 기존 코드를 `apps-script/consultation-form.gs` 내용으로 교체합니다.
+3. 저장 후 `배포 > 배포 관리`에서 기존 Web App 배포를 수정하거나 새 배포를 만듭니다.
+4. 권한 승인 화면에서 스프레드시트 접근과 메일 발송 권한을 승인합니다.
+5. 새 `/exec` URL이 바뀌면 `index.html`의 `data-endpoint` 값을 새 주소로 교체합니다.

@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 120" role="img" aria-labelledby="logoTitle">
-  <title id="logoTitle">물탱크수리연구소</title>
-  <rect width="620" height="120" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 120" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">(주)물탱크수리연구소</title>
+  <rect width="720" height="120" fill="#fff"/>
   <g transform="translate(28 18)">
     <path d="M22 68 C26 35 43 16 66 3 C75 26 75 49 63 70 Z" fill="#f01825" stroke="#09152b" stroke-width="5" stroke-linejoin="round"/>
     <path d="M78 69 C80 42 76 25 70 12 C92 22 108 42 116 69 Z" fill="#ffd230" stroke="#09152b" stroke-width="5" stroke-linejoin="round"/>
     <path d="M5 75 C45 79 90 78 127 72 C116 87 90 97 55 95 C31 94 14 88 5 75 Z" fill="#173476" stroke="#09152b" stroke-width="5" stroke-linejoin="round"/>
     <path d="M43 94 C38 101 36 105 36 105 C50 99 70 94 92 93" fill="none" stroke="#09152b" stroke-width="5" stroke-linecap="round"/>
   </g>
-  <text x="180" y="75" fill="#1d3672" font-family="Arial, 'Noto Sans KR', 'Malgun Gothic', sans-serif" font-size="52" font-weight="900" letter-spacing="-2">물탱크수리연구소</text>
+  <text x="180" y="75" fill="#1d3672" font-family="Arial, 'Noto Sans KR', 'Malgun Gothic', sans-serif" font-size="48" font-weight="900" letter-spacing="-2">(주)물탱크수리연구소</text>
 </svg>
